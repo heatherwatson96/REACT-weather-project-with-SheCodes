@@ -1,38 +1,70 @@
 .App {
   text-align: center;
+  width: 70%;
+  border: 2px solid rgb(201, 201, 201);
+  border-radius: 10%;
+  margin: 20px 40px 60px 80px;
+  padding-bottom: 20px;
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.SearchCity {
+  border-radius: 8px;
+  border: 2px solid rgb(250, 248, 141);
+  box-shadow: rgb(241, 223, 217, 0.5) 5px 5px;
+  background-color: rgba(255, 255, 255, 0);
+  margin-top: 20px;
+  padding: 4px 12px;
+}
+.city-input {
+  border-radius: 8px;
+  border: solid rgb(201, 201, 201) 1px;
+  display: inline-block;
+  margin: 10px 0;
+  padding: 4px 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* .place {
+  font-size: 28px;
+  margin-left: 55px;
+} */
+.icon {
+  font-size: 12px;
+}
+.CurrentWeather {
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.forecast-title {
+  font-size: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.weather-forecast-date {
+  text-decoration: underline;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 5px;
+}
+.weather-forecast-date {
+  font-size: 16px;
+}
+.weather-forecast-temp-min {
+  opacity: 0.6;
+}
+.ForecastWeather {
+  padding-bottom: 30px;
+}
+.Ending {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* .Date {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  padding: 20px;
+} */

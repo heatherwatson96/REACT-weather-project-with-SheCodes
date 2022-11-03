@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Day from "./Day";
-import "./App.css";
+import FormattedDate from "./FormattedDate";
+import "./LiveWeather.css";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function SearchEngine() {
-
-  let [TodaysWeather, setTodaysWeather] = useState({});
+  const [TodaysWeather, setTodaysWeather] = useState({ ready: false });
   let [ForecastWeather, setForecastWeather] = useState({});
 
   let [place, setPlace] = useState("");
@@ -24,6 +25,8 @@ export default function SearchEngine() {
   }
   function showWeather(response) {
     setTodaysWeather({
+      ready: true,
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
@@ -69,7 +72,7 @@ export default function SearchEngine() {
     });
   }
   return (
-    <div className="LiveWeather">
+    <div className="live-weather">
       <form onSubmit={handleSubmit}>
         <input
           className="city-input"
@@ -77,56 +80,69 @@ export default function SearchEngine() {
           placeholder="Type a City..."
           onChange={updatePlace}
         />
-        <button className="SearchCity" type="submit">
+        <button className="search-city" type="submit">
           🔍
         </button>
         <br />
-        <br />
       </form>
-      <h1>{message}</h1>
-      <ul className="CurrentWeather">
-        <li>Temperature: {Math.round(TodaysWeather.temperature)}°C</li>
-        <li>Description: {TodaysWeather.description}</li>
-        <li>Humidity: {TodaysWeather.humidity} %</li>
-        <li>Wind: {Math.round(TodaysWeather.wind * 10) / 10} km/h</li>
-        <img
-          className="icon"
-          src={TodaysWeather.icon}
-          alt={TodaysWeather.description}
-        />
-      </ul>
+      {TodaysWeather.ready && (
+        <>
+          <h1 className="text-capitalisation">{message}</h1>
+          <br />
+          <ul className="current-weather">
+            <li>
+              <FormattedDate date={TodaysWeather.date} />
+            </li>
+            <li className="temp-icon">
+              <img
+                className="icon"
+                src={TodaysWeather.icon}
+                alt={TodaysWeather.description}
+              />{" "}
+              
+            <WeatherTemperature celsius={TodaysWeather.temperature} />
+            </li>
+            <li className="text-capitalisation">
+              {" "}
+              {TodaysWeather.description}
+            </li>
+            <li>Humidity: {TodaysWeather.humidity} %</li>
+            <li>Wind: {Math.round(TodaysWeather.wind * 10) / 10} km/h</li>
+          </ul>
 
-      <div className=" container ForecastWeather">
-        <div className="forecast-title">5-Day Forecast </div>
-        <div className=" d-flex flex-row">
-          <Day
-            day={ForecastWeather.day1}
-            icon={ForecastWeather.icon1}
-            temperature={ForecastWeather.temperatureday1}
-          />
+          <div className=" container forecast-weather">
+            <div className="forecast-title">5-Day Forecast </div>
+            <div className=" d-flex flex-row">
+              <Day
+                day={ForecastWeather.day1}
+                icon={ForecastWeather.icon1}
+                temperature={ForecastWeather.temperatureday1}
+              />
 
-          <Day
-            day={ForecastWeather.day2}
-            icon={ForecastWeather.icon2}
-            temperature={ForecastWeather.temperatureday2}
-          />
-          <Day
-            day={ForecastWeather.day3}
-            icon={ForecastWeather.icon3}
-            temperature={ForecastWeather.temperatureday3}
-          />
-          <Day
-            day={ForecastWeather.day4}
-            icon={ForecastWeather.icon4}
-            temperature={ForecastWeather.temperatureday4}
-          />
-          <Day
-            day={ForecastWeather.day5}
-            icon={ForecastWeather.icon5}
-            temperature={ForecastWeather.temperatureday5}
-          />
-        </div>
-      </div>
+              <Day
+                day={ForecastWeather.day2}
+                icon={ForecastWeather.icon2}
+                temperature={ForecastWeather.temperatureday2}
+              />
+              <Day
+                day={ForecastWeather.day3}
+                icon={ForecastWeather.icon3}
+                temperature={ForecastWeather.temperatureday3}
+              />
+              <Day
+                day={ForecastWeather.day4}
+                icon={ForecastWeather.icon4}
+                temperature={ForecastWeather.temperatureday4}
+              />
+              <Day
+                day={ForecastWeather.day5}
+                icon={ForecastWeather.icon5}
+                temperature={ForecastWeather.temperatureday5}
+              />
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

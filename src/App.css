@@ -1,60 +1,15 @@
 .App {
+  display: flex;
+  justify-content: center;
+}
+.app-container {
+  font-size: 16px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  width: 65%;
   text-align: center;
-  width: 70%;
   border: 2px solid rgb(201, 201, 201);
-  border-radius: 10%;
-  margin: 20px 40px 60px 80px;
-  padding-bottom: 20px;
-  padding-left: 150px;
-  padding-right: 150px;
-}
-
-.SearchCity {
-  border-radius: 8px;
-  border: 2px solid rgb(250, 248, 141);
-  box-shadow: rgb(241, 223, 217, 0.5) 5px 5px;
-  background-color: rgba(255, 255, 255, 0);
-  margin-top: 20px;
-  padding: 4px 12px;
-}
-.city-input {
-  border-radius: 8px;
-  border: solid rgb(201, 201, 201) 1px;
-  display: inline-block;
-  margin: 10px 0;
-  padding: 4px 12px;
-}
-
-.icon {
-  font-size: 12px;
-}
-.CurrentWeather {
-  font-size: 16px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  list-style: none;
-}
-
-.forecast-title {
-  font-size: 20px;
-}
-
-.weather-forecast-date {
-  text-decoration: underline;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 5px;
-}
-.weather-forecast-date {
-  font-size: 16px;
-}
-.weather-forecast-temp-min {
-  opacity: 0.6;
-}
-.ForecastWeather {
-  padding-bottom: 30px;
-}
-.Ending {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 12px;
-  text-decoration: none;
-  color: black;
+  border-radius: 3%;
+  margin: 20px;
+  padding: 20px, 150px, 20px, 150px;
 }

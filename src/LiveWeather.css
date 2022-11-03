@@ -1,0 +1,65 @@
+.live-weather {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.search-city {
+  border-radius: 8px;
+  border: 2px solid rgb(250, 248, 141);
+  box-shadow: rgb(241, 223, 217, 0.5) 5px 5px;
+  background-color: rgba(255, 255, 255, 0);
+  margin-top: 20px;
+  padding: 4px 12px;
+}
+
+.city-input {
+  border-radius: 8px;
+  border: solid rgb(201, 201, 201) 1px;
+  display: inline-block;
+  margin: 10px 0;
+  padding: 4px 12px;
+}
+.temp {
+  font-size: 60px;
+  line-height: 0.9;
+  text-decoration: none;
+}
+.temp-container {
+  display: flex;
+}
+.temp-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 12px;
+}
+.text-capitalisation {
+  text-transform: capitalize;
+}
+
+.current-weather {
+  font-size: 16px;
+
+  list-style: none;
+  padding: 0;
+}
+.forecast-title {
+  font-size: 20px;
+}
+
+.weather-forecast-date {
+  text-decoration: underline;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 5px;
+}
+.weather-forecast-date {
+  font-size: 16px;
+}
+.weather-forecast-temp-min {
+  opacity: 0.6;
+}
+.forecast-weather {
+  padding-bottom: 30px;
+}

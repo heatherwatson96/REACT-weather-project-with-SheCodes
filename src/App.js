@@ -5,10 +5,14 @@ import LiveWeather from "./LiveWeather";
 export default function App() {
   return (
     <div className="App">
-      <div>
-        <LiveWeather />
+      <div className="app-container">
+        <div>
+          <LiveWeather />
+        </div>
+        <div>
+          <Ending />
+        </div>
       </div>
-      <Ending />
     </div>
   );
 }

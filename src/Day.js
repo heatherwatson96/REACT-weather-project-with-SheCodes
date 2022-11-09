@@ -1,13 +1,14 @@
 import React from "react";
-import "./App.css";
+import "./Day.css";
 
 export default function Day(props) {
   return (
     <div className="col">
       <div className=" weather-forecast-date">{props.day}</div>
       <img className="icon1" src={props.icon} alt="" width="50" />
-      <div className="weather-forecast-temperature">
-        <p> {Math.round(props.temperature)}°C</p>
+      <div className="temps">
+        <span className="max-temp"> {Math.round(props.maxTemperature)}°C {"|"}</span>
+        <span className="min-temp">{Math.round(props.minTemperature)}°C</span>
       </div>
     </div>
   );

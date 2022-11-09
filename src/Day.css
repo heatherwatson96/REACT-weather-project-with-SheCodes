@@ -1,0 +1,9 @@
+.min-temp {
+  opacity: 55%;
+}
+.temps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}

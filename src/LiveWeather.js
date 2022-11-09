@@ -50,23 +50,28 @@ export default function SearchEngine() {
   function showForecast(response) {
     console.log("forecast", response);
     setForecastWeather({
-      temperatureday1: response.data.daily[0].temp.day,
+      maxTemperatureday1: response.data.daily[0].temp.max,
+      minTemperatureday1: response.data.daily[0].temp.min,
       icon1: `http://openweathermap.org/img/wn/${response.data.daily[0].weather[0].icon}@2x.png`,
       day1: formatDay(response.data.daily[0].dt),
 
-      temperatureday2: response.data.daily[1].temp.day,
+      maxTemperatureday2: response.data.daily[1].temp.max,
+      minTemperatureday2: response.data.daily[1].temp.min,
       icon2: `http://openweathermap.org/img/wn/${response.data.daily[1].weather[0].icon}@2x.png`,
       day2: formatDay(response.data.daily[1].dt),
 
-      temperatureday3: response.data.daily[2].temp.day,
+      maxTemperatureday3: response.data.daily[2].temp.max,
+      minTemperatureday3: response.data.daily[2].temp.min,
       icon3: `http://openweathermap.org/img/wn/${response.data.daily[2].weather[0].icon}@2x.png`,
       day3: formatDay(response.data.daily[2].dt),
 
-      temperatureday4: response.data.daily[3].temp.day,
+      maxTemperatureday4: response.data.daily[3].temp.max,
+      minTemperatureday4: response.data.daily[3].temp.min,
       icon4: `http://openweathermap.org/img/wn/${response.data.daily[3].weather[0].icon}@2x.png`,
       day4: formatDay(response.data.daily[3].dt),
 
-      temperatureday5: response.data.daily[4].temp.day,
+      maxTemperatureday5: response.data.daily[4].temp.max,
+      minTemperatureday5: response.data.daily[4].temp.min,
       icon5: `http://openweathermap.org/img/wn/${response.data.daily[4].weather[0].icon}@2x.png`,
       day5: formatDay(response.data.daily[4].dt),
     });
@@ -99,8 +104,7 @@ export default function SearchEngine() {
                 src={TodaysWeather.icon}
                 alt={TodaysWeather.description}
               />{" "}
-              
-            <WeatherTemperature celsius={TodaysWeather.temperature} />
+              <WeatherTemperature celsius={TodaysWeather.temperature} />
             </li>
             <li className="text-capitalisation">
               {" "}
@@ -116,28 +120,33 @@ export default function SearchEngine() {
               <Day
                 day={ForecastWeather.day1}
                 icon={ForecastWeather.icon1}
-                temperature={ForecastWeather.temperatureday1}
+                maxTemperature={ForecastWeather.maxTemperatureday1}
+                minTemperature={ForecastWeather.minTemperatureday1}
               />
 
               <Day
                 day={ForecastWeather.day2}
                 icon={ForecastWeather.icon2}
-                temperature={ForecastWeather.temperatureday2}
+                maxTemperature={ForecastWeather.maxTemperatureday2}
+                minTemperature={ForecastWeather.minTemperatureday2}
               />
               <Day
                 day={ForecastWeather.day3}
                 icon={ForecastWeather.icon3}
-                temperature={ForecastWeather.temperatureday3}
+                maxTemperature={ForecastWeather.maxTemperatureday3}
+                minTemperature={ForecastWeather.minTemperatureday3}
               />
               <Day
                 day={ForecastWeather.day4}
                 icon={ForecastWeather.icon4}
-                temperature={ForecastWeather.temperatureday4}
+                maxTemperature={ForecastWeather.maxTemperatureday4}
+                minTemperature={ForecastWeather.minTemperatureday4}
               />
               <Day
                 day={ForecastWeather.day5}
                 icon={ForecastWeather.icon5}
-                temperature={ForecastWeather.temperatureday5}
+                maxTemperature={ForecastWeather.maxTemperatureday5}
+                minTemperature={ForecastWeather.minTemperatureday5}
               />
             </div>
           </div>
